@@ -1,0 +1,331 @@
+html, body { height: 100%; }
+
+.wrapper {
+  position: relative;
+  padding-top: 50px;
+  height: calc(100% - 50px);
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: 'Courier', monospace;
+  color: #fff;
+  background-color: #3cbcfc;
+  overflow: hidden;
+  transition: background-color 1s;
+}
+.gs {
+  background-image: url('../img/gs.png');
+  background-repeat: no-repeat;
+  background-position: 9999px 9999px;
+}
+.duck-fly-container:hover {
+  cursor: url('../img/aim.png'), crosshair;
+}
+.foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 226px;
+  background: url('../img/bg.png') 0 0 repeat-x;
+  z-index: 5;
+}
+.dog {
+  position: absolute;
+  bottom: 90px;
+  left: 0;
+  width: 166px;
+  height: 122px;
+  background-position: -24px -24px;
+  transition: transform 6s linear, bottom 0.5s linear;
+  z-index: 10;
+}
+.dog_walk {
+  animation-name: dog-walk;
+  animation-duration: .6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+  transition: transform 5.4s linear;
+}
+.dog_snuff{
+  animation-name: dog-snuff;
+  animation-duration: .3s;
+  animation-iteration-count: 3;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+}
+.dog_jump {
+  width: 161px;
+  height: 143px;
+  animation-name: dog-jump;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  transition: transform .5s linear .5s;
+}
+@keyframes dog-walk {
+  0% {
+    background-position: -24px -24px;
+  }
+  33% {
+    background-position: -388px -24px;
+  }
+  66% {
+    background-position: -570px -24px;
+  }
+  100% {
+    background-position: -24px -24px;
+  }
+}
+@keyframes dog-snuff {
+  0% {
+    background-position: -24px -24px;
+  }
+  50% {
+  background-position: -206px -24px;
+  }
+  100% {
+    background-position: -24px -24px;
+  }
+}
+@keyframes dog-jump {
+  0% {
+    background-position: -746px -6px;
+  }
+  25% {
+    width: 101px;
+    height: 96px;
+    background-position: -932px -59px;
+  }
+  100% {
+    width: 101px;
+    height: 96px;
+    background-position: -932px -59px;
+  }
+}
+.duck {
+  position: absolute;
+  bottom: -95px;
+  left: 48vw;
+  display: none;
+  transition: left 1.5s linear, bottom 1.5s linear, opacity 0.5s linear, filter 0.2s linear;
+}
+.shot {
+  width: 93px;
+  height: 87px;
+  background-position: -63px -434px;
+}
+.falling {
+  width: 53px;
+  height: 89px;
+  background-position: -184px -432px;
+}
+.duck_fly {
+  display: block !important;
+}
+.duck_fly_left,
+.duck_fly_top_left,
+.duck_fly_right,
+.duck_fly_top_right {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+}
+.duck_fly_left {
+  animation-name: duck-fly-left;
+}
+.duck_fly_top_left {
+  animation-name: duck-fly-top-left;
+}
+.duck_fly_right {
+  animation-name: duck-fly-right;
+}
+.duck_fly_top_right {
+  animation-name: duck-fly-top-right;
+}
+.show_duck {
+  width: 124px;
+  height: 112px;
+  background-position: -24px -563px;
+  animation: 1s dog-go-up, 1s dog-go-up reverse 1s;
+}
+.show_ducks {
+  width: 161px;
+  height: 112px;
+  background-position: -159px -563px;
+  animation: 1s dog-go-up, 1s dog-go-up reverse 1s;
+}
+.no_ducks {
+  width: 87px;
+  height: 117px;
+  background-position: -1065px -30px;
+  animation: 1s dog-go-up, 0.5s dog-laungh 3 steps(1, end) 1s forwards, 1s dog-go-up reverse 3s forwards;
+}
+@keyframes dog-go-up {
+   0% {
+     -ms-transform: translate(48vw, 0px);
+     transform: translate(48vw, 0px);
+   }
+   100% {
+     -ms-transform: translate(48vw, -100px);
+     transform: translate(48vw, -100px);
+   }
+ }
+@keyframes dog-laungh {
+  0% {
+    -ms-transform: translate(48vw, -100px);
+    transform: translate(48vw, -100px);
+  }
+  50% {
+    -ms-transform: translate(48vw, -98px);
+    transform: translate(48vw, -98px);
+  }
+  100% {
+    -ms-transform: translate(48vw, -100px);
+    transform: translate(48vw, -100px);
+  }
+}
+@keyframes duck-fly-left {
+  0% {
+    width: 102px;
+    height: 72px;
+    background-position: -542px -203px;
+  }
+  50% {
+    width: 104px;
+    height: 61px;
+    background-position: -956px -212px;
+  }
+  100% {
+    width: 102px;
+    height: 72px;
+    background-position: -542px -203px;
+  }
+}
+@keyframes duck-fly-top-left {
+  0% {
+    width: 74px;
+    height: 95px;
+    background-position: -116px -176px;
+  }
+  50% {
+    width: 104px;
+    height: 95px;
+    background-position: -434px -182px;
+  }
+  100% {
+    width: 74px;
+    height: 95px;
+    background-position: -116px -176px;
+  }
+}
+@keyframes duck-fly-right {
+  0% {
+    width: 102px;
+    height: 72px;
+    background-position: -680px -203px;
+  }
+  50% {
+    width: 104px;
+    height: 61px;
+    background-position: -818px -212px;
+  }
+  100% {
+    width: 102px;
+    height: 72px;
+    background-position: -680px -203px;
+  }
+}
+@keyframes duck-fly-top-right {
+  0% {
+    width: 74px;
+    height: 95px;
+    background-position: -218px -176px;
+  }
+  50% {
+    width: 104px;
+    height: 95px;
+    background-position: -323px -182px;
+  }
+  100% {
+    width: 74px;
+    height: 95px;
+    background-position: -218px -176px;
+  }
+}
+.duck-fly-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 226px);
+}
+.tree {
+  position: absolute;
+  bottom: 180px;
+  left: 8%;
+  width: 208px;
+  height: 360px;
+  background-position: -452px -414px;
+}
+.timer {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+}
+.btn {
+  position: absolute;
+  top: 64%;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  font: inherit;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px outset #fff;
+  background-color: transparent;
+}
+.start-btn {
+  display: block;
+}
+.restart-btn {
+  display: none;
+}
+.text {
+  margin: auto;
+  width: 600px;
+  text-align: center;
+}
+.text p {
+  margin-bottom: 30px;
+}
+.start-text {
+  font-size: 28px;
+  font-weight: 600;
+}
+.game-over-text {
+  font-size: 40px;
+  font-weight: 600;
+}
+.ammo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 135px;
+}
+.bullet {
+  margin: 0 15px 10px 0;
+  width: 16px;
+  height: 30px;
+  filter: drop-shadow(0 0 5px);
+}
+.bullet.available {
+  background-position: -24px -177px;
+}

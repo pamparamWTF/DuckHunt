@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>DUCK HUNT</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/duckHunt.js"></script>
+	<link rel="stylesheet" href="assets/styles/reset.css">
+	<link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+	<div class="sounds">
+		<audio id="dogWalk" src="./assets/sounds/intro.mp3"></audio>
+		<audio id="dogBark" src="./assets/sounds/bark.mp3"></audio>
+		<audio id="shot" src="./assets/sounds/shot.mp3"></audio>
+		<audio id="dogGotDuck" src="./assets/sounds/gotDuck.mp3"></audio>
+		<audio id="dogLaungh" src="./assets/sounds/laugh.mp3"></audio>
+		<audio id="gameOver" src="./assets/sounds/gameOver.mp3"></audio>
+	</div>
+
+	<div class="wrapper">
+
+		<div class="ammo"></div>
+
+		<div class="tree gs"></div>
+
+		<div class="timer"></div>
+
+		<div class="duck-fly-container"></div>
+
+		<div class="foot">
+			<button class="start-btn btn" type="button">Старт</button>
+			<button class="restart-btn btn" type="button">Начать сначала</button>
+		</div>
+
+		<div class="dog gs"></div>
+
+		<div class="text">
+			<p>В этой игре Вам предстоит охотиться на уток. Внимание! У Вас ограничено время и патроны.</p>
+			<p class="start-text">Нажмите кнопку "Старт", чтобы начать</p>
+		</div>
+
+	</div>
+</body>
+</html>
